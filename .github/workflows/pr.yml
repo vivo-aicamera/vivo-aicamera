@@ -10,13 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     
     permissions:
-      actions: read
-      pages: write
-      id-token: write
       contents: write
-      deployments: write
-      issues: read     # 给予 issues 的读取权限
-      packages: read   # 给予包的读取权限
 
     steps:
       - name: Checkout repository
