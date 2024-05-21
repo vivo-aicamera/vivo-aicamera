@@ -8,8 +8,8 @@ if (isGithubActions) {
   // 去掉 `<owner>/`
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, "");
 
-  assetPrefix = `/${repo}/`;
-  basePath = `/${repo}`;
+  assetPrefix = `/https://${repo}/`;
+  basePath = `/https://${repo}`;
 }
 
 const nextConfig = {
