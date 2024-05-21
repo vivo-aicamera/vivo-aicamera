@@ -21,23 +21,16 @@ jobs:
         with:
           node-version: 18
 
-      - name: install Pnpm 🧬
-        uses: pnpm/action-setup@v2
-        id: pnpm-install
-        with:
-          version: 7
-          run_install: true
-      
       - name: install package
-        run: pnpm install
+        run: npm install
+      
       - name: build
         run: |
-          npm run ghbuild
-          touch out/.nojekyll
+          npm run build
 
       - name: deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: out
-          clean: true
+          publish_branch: gh-pages
+          publish_dir: .next
+          allow_empty_commit: true
